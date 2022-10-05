@@ -37,7 +37,7 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 // import { NzListModule } from 'ng-zorro-antd/list';
 // import { NzMentionModule } from 'ng-zorro-antd/mention';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
-// import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzMessageModule } from 'ng-zorro-antd/message';
 // import { NzModalModule } from 'ng-zorro-antd/modal';
 // import { NzNotificationModule } from 'ng-zorro-antd/notification';
 // import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
@@ -56,7 +56,7 @@ import { NzSliderModule } from 'ng-zorro-antd/slider';
 // import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 // import { NzStepsModule } from 'ng-zorro-antd/steps';
 // import { NzSwitchModule } from 'ng-zorro-antd/switch';
-// import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzTableModule } from 'ng-zorro-antd/table';
 // import { NzTabsModule } from 'ng-zorro-antd/tabs';
 // import { NzTagModule } from 'ng-zorro-antd/tag';
 // import { NzTimePickerModule } from 'ng-zorro-antd/time-picker';
@@ -108,7 +108,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
     // NzListModule,
     // NzMentionModule,
     NzMenuModule,
-    // NzMessageModule,
+    NzMessageModule,
     // NzModalModule,
     // NzNoAnimationModule,
     // NzNotificationModule,
@@ -128,7 +128,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
     // NzStatisticModule,
     // NzStepsModule,
     // NzSwitchModule,
-    // NzTableModule,
+    NzTableModule,
     // NzTabsModule,
     // NzTagModule,
     // NzTimePickerModule,

@@ -1,0 +1,18 @@
+<nz-table #basicTable [nzData]="products" nzShowPagination nzShowSizeChanger>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Precio</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{data.name}}</td>
+      <td>{{data.price.value + ' ' + data.price.base}}</td>
+      <td>
+        <a [routerLink]="[ '/client/products', data.id ]">Ver</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

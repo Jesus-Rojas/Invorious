@@ -5,12 +5,14 @@ import { ClientRoutingModule } from './client-routing.module';
 import { ProductsComponent } from './pages/products/products.component';
 import { ProductComponent } from './pages/product/product.component';
 import { NgZorroModule } from '../shared/ng-zorro.module';
+import { TableComponent } from './components/table/table.component';
 
 
 @NgModule({
   declarations: [
     ProductsComponent,
-    ProductComponent
+    ProductComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,

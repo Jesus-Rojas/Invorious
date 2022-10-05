@@ -1,7 +1,10 @@
 <nz-breadcrumb>
-  <nz-breadcrumb-item>Products</nz-breadcrumb-item>
+  
+  <a [routerLink]="[ '/client/products' ]">
+    <nz-breadcrumb-item>Products</nz-breadcrumb-item>
+  </a>
   <!-- <nz-breadcrumb-item>Bill</nz-breadcrumb-item> -->
 </nz-breadcrumb>
 <div class="inner-content">
-  
+  <app-table [products]="products"></app-table>
 </div>

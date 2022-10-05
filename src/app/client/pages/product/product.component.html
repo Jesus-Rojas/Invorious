@@ -1,1 +1,7 @@
-<p>product works!</p>
+<nz-breadcrumb>
+  <nz-breadcrumb-item class="cursor-pointer" [routerLink]="[ '/client/products' ]">Products</nz-breadcrumb-item>
+  <nz-breadcrumb-item v-if="product">{{ product?.name }}</nz-breadcrumb-item>
+</nz-breadcrumb>
+<div class="inner-content">
+  <app-table [products]="related"></app-table>
+</div>

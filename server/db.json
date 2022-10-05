@@ -5,6 +5,7 @@
       "name": "Brown Shoes",
       "description": "A brown shirt made from fine cotton.",
       "price": {
+        "value": "1",
         "base": "USD",
         "amount": 50
       },
@@ -15,6 +16,7 @@
       "name": "Green Pants",
       "description": "A super slick pair of green pants, hand crafted by artisan clothmakers in the Amazon.",
       "price": {
+        "value": "1",
         "base": "USD",
         "amount": 30
       },
@@ -25,6 +27,7 @@
       "name": "Green Pants",
       "description": "A super slick pair of green pants, hand crafted by artisan clothmakers in the Amazon.",
       "price": {
+        "value": "1",
         "base": "USD",
         "amount": 25
       },
@@ -35,6 +38,7 @@
       "name": "White Shirt",
       "description": "A pristine white shirt, sure to look great with any outfit.",
       "price": {
+        "value": "1",
         "base": "USD",
         "amount": 20
       },
@@ -45,6 +49,7 @@
       "name": "Blue Shirt",
       "description": "You haven't seen a blue shirt like this before.",
       "price": {
+        "value": "1",
         "base": "CNY",
         "amount": 300
       },
