@@ -26,12 +26,12 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 // import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 // import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 // import { NzEmptyModule } from 'ng-zorro-antd/empty';
-// import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 // import { NzI18nModule } from 'ng-zorro-antd/i18n';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzImageModule } from 'ng-zorro-antd/image';
-// import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzInputModule } from 'ng-zorro-antd/input';
 // import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 // import { NzListModule } from 'ng-zorro-antd/list';
@@ -49,7 +49,7 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
 // import { NzRateModule } from 'ng-zorro-antd/rate';
 // import { NzResultModule } from 'ng-zorro-antd/result';
 // import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
-// import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzSelectModule } from 'ng-zorro-antd/select';
 // import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 import { NzSliderModule } from 'ng-zorro-antd/slider';
 // import { NzSpinModule } from 'ng-zorro-antd/spin';
@@ -103,12 +103,12 @@ import { NavigateComponent } from './components/navigate/navigate.component';
     // NzDrawerModule,
     // NzDropDownModule,
     // NzEmptyModule,
-    // NzFormModule,
+    NzFormModule,
     NzGridModule,
     // NzI18nModule,
     NzIconModule,
     NzImageModule,
-    // NzInputModule,
+    NzInputModule,
     // NzInputNumberModule,
     NzLayoutModule,
     // NzListModule,
@@ -127,7 +127,7 @@ import { NavigateComponent } from './components/navigate/navigate.component';
     // NzRateModule,
     // NzResultModule,
     // NzSegmentedModule,
-    // NzSelectModule,
+    NzSelectModule,
     // NzSkeletonModule,
     NzSliderModule,
     // NzSpinModule,

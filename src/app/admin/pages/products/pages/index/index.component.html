@@ -1,0 +1,52 @@
+<app-navigate>
+  <ng-container>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <nz-breadcrumb>
+        <nz-breadcrumb-item>Products</nz-breadcrumb-item>
+      </nz-breadcrumb>
+      <button [routerLink]="['store']" class="create-button" nz-button nzType="primary">Create</button>
+    </div>
+  </ng-container>
+  
+</app-navigate>
+<div class="inner-content">
+  <nz-table #basicTable [nzData]="products" nzShowPagination nzShowSizeChanger>
+    <thead>
+      <tr>
+        <th>Detail</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Precio</th>
+        <th>Base</th>
+        <th>Amount</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let data of basicTable.data">
+        <tr>
+          <td 
+            [nzExpand]="expandSet.has(data.id || 1)" 
+            (nzExpandChange)="onExpandChange({ id: data.id || 1, checked: $event})"
+          ></td>
+          <td>{{ data.id }}</td>
+          <td>{{ data.name }}</td>
+          <td>{{ data.description.length > 25 ? data.description.slice(0, 25)+'...' : data.description }}</td>
+          <td>{{ data.price.value }}</td>
+          <td>{{ data.price.base }}</td>
+          <td>{{ data.price.amount }}</td>
+          <td>
+            <a [routerLink]="[ '/admin/products/show', data.id ]">Ver</a>
+            <a style="margin-left: 1rem; margin-right: 1rem;" [routerLink]="[ '/admin/products/edit', data.id ]">Edit</a>
+            <a (click)="remove(data.id || 1)">Delete</a>
+          </td>
+        </tr>
+        <tr [nzExpand]="expandSet.has(data.id || 1)" *ngIf="data.products?.length">
+          <h3>Related Products</h3>
+          <app-table [products]="data.products || []"></app-table>
+        </tr>
+      </ng-container>
+    </tbody>
+  </nz-table>
+</div>

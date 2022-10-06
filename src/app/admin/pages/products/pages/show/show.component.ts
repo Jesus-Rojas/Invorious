@@ -6,11 +6,11 @@ import { Product } from 'src/app/shared/models/product.interface';
 import { ProductService } from 'src/app/shared/services/product.service';
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
+  selector: 'app-show',
+  templateUrl: './show.component.html',
+  styleUrls: ['./show.component.scss']
 })
-export class ProductComponent implements OnInit {
+export class ShowComponent implements OnInit {
 
   product :Product | null = null;
   related :Product[] = [];
@@ -39,8 +39,9 @@ export class ProductComponent implements OnInit {
         },
         error: ({ status, statusText }) => {
           this.message.error(`${status} ${statusText}`);
-          this.router.navigate(['/clientes'])
+          this.router.navigate(['/admin'])
         }
       });
   }
+
 }

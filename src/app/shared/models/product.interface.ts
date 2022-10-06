@@ -1,5 +1,3 @@
-import { Observable } from "rxjs";
-
 interface Price {
   base: string;
   value: number;
@@ -7,7 +5,7 @@ interface Price {
 }
 
 export interface Product {
-  id: number;
+  id?: number;
   name: string;
   description: string;
   price: Price;

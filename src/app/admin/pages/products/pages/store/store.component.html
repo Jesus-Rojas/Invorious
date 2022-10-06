@@ -1,0 +1,62 @@
+<app-navigate>
+  <nz-breadcrumb>
+    <nz-breadcrumb-item class="cursor-pointer" [routerLink]="[ '/admin/products' ]">Products</nz-breadcrumb-item>
+  </nz-breadcrumb>
+</app-navigate>
+
+<div class="inner-content">
+  <form nz-form [formGroup]="form" (ngSubmit)="submitForm()">
+    
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Name</nz-form-label>
+      <nz-form-control [nzSpan]="12" nzErrorTip="Please write something here!">
+        <input formControlName="name" nz-input placeholder="write any thing">
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Price</nz-form-label>
+      <nz-form-control [nzSpan]="12" nzErrorTip="Please write something here!">
+        <input formControlName="price" type="number" nz-input placeholder="write any thing">
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Base</nz-form-label>
+      <nz-form-control [nzSpan]="12" nzErrorTip="Please write something here!">
+        <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a exchange rate" formControlName="base">
+          <nz-option *ngFor="let item of exchanges" [nzLabel]="item.base" [nzValue]="item.base"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Amount</nz-form-label>
+      <nz-form-control [nzSpan]="12" nzErrorTip="Please write something here!">
+        <input formControlName="amount" type="number" nz-input placeholder="write any thing">
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7">Related</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <nz-select class="multiple-select" nzMode="tags" nzPlaceHolder="Tag Mode" formControlName="related">
+          <nz-option *ngFor="let product of products" [nzLabel]="product.name" [nzValue]="product.id"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Description</nz-form-label>
+      <nz-form-control [nzSpan]="12" nzErrorTip="Please write something here!">
+        <textarea formControlName="description" nz-input rows="2" placeholder="write any thing"></textarea>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control [nzOffset]="7" [nzSpan]="12" style="text-align: right;">
+        <button nz-button nzType="primary" [disabled]="!form.valid">Create</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</div>
