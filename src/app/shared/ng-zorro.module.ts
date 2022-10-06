@@ -27,10 +27,10 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 // import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 // import { NzEmptyModule } from 'ng-zorro-antd/empty';
 // import { NzFormModule } from 'ng-zorro-antd/form';
-// import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzGridModule } from 'ng-zorro-antd/grid';
 // import { NzI18nModule } from 'ng-zorro-antd/i18n';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-// import { NzImageModule } from 'ng-zorro-antd/image';
+import { NzImageModule } from 'ng-zorro-antd/image';
 // import { NzInputModule } from 'ng-zorro-antd/input';
 // import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
@@ -73,8 +73,14 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 // import { NzCodeEditorModule } from 'ng-zorro-antd/code-editor';
 // import { NzGraphModule } from 'ng-zorro-antd/graph';
 
+import { NavigateComponent } from './components/navigate/navigate.component';
+
 @NgModule({
+  declarations: [
+    NavigateComponent,
+  ],
   exports: [
+    NavigateComponent,
     // NzAffixModule,
     // NzAlertModule,
     // NzAnchorModule,
@@ -98,10 +104,10 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
     // NzDropDownModule,
     // NzEmptyModule,
     // NzFormModule,
-    // NzGridModule,
+    NzGridModule,
     // NzI18nModule,
     NzIconModule,
-    // NzImageModule,
+    NzImageModule,
     // NzInputModule,
     // NzInputNumberModule,
     NzLayoutModule,

@@ -4,14 +4,21 @@
       <span *ngIf="! isCollapsed">INVORIOUS</span>
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline">
-      <li nz-submenu nzTitle="Admin" nzIcon="user">
+      <li 
+        nz-submenu 
+        [nzTitle]="routeHeader.name" 
+        [nzIcon]="routeHeader.icon" 
+        *ngFor="let routeHeader of routes"
+      >
         <ul>
-          <li nz-menu-item>Products</li>
-        </ul>
-      </li>
-      <li nz-submenu nzTitle="Clientes" nzIcon="team">
-        <ul>
-          <li nz-menu-item>Products</li>
+          <li 
+            nz-menu-item
+            [routerLink]="[ routeHeader.base + routeChild.route ]" 
+            routerLinkActive="active"
+            *ngFor="let routeChild of routeHeader.routes"
+          >
+            {{ routeChild.name }}
+          </li>
         </ul>
       </li>
     </ul>

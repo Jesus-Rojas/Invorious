@@ -1,7 +1,33 @@
-<nz-breadcrumb>
-  <nz-breadcrumb-item class="cursor-pointer" [routerLink]="[ '/client/products' ]">Products</nz-breadcrumb-item>
-  <nz-breadcrumb-item v-if="product">{{ product?.name }}</nz-breadcrumb-item>
-</nz-breadcrumb>
+
+<app-navigate>
+  <nz-breadcrumb>
+    <nz-breadcrumb-item class="cursor-pointer" [routerLink]="[ '/client/products' ]">Products</nz-breadcrumb-item>
+    <nz-breadcrumb-item v-if="product">{{ product?.name }}</nz-breadcrumb-item>
+  </nz-breadcrumb>
+</app-navigate>
+
 <div class="inner-content">
-  <app-table [products]="related"></app-table>
+  <div nz-row class="product-detail" v-if="product">
+    <div nz-col nzSpan="8" style="text-align: right; padding-right: 1rem;">
+      <img 
+        nz-image 
+        width="200px" 
+        height="200px" 
+        nzSrc="error" 
+        [nzFallback]="fallback" 
+        alt="" 
+      />
+    </div>
+    <div nz-col nzSpan="16">
+      <h3>{{ product?.name }}</h3>
+      <p>{{ product?.description }}</p>
+      <p class="detail-price">Cant: {{ product?.price?.amount }}</p>
+      <p class="detail-price">Price: {{ product?.price?.value }} {{ product?.price?.base }}</p>
+    </div>
+  </div>
+  <div nz-row>
+    <div nz-col nzSpan="20" style="margin-left: auto; margin-right: auto;">
+      <app-table [products]="related"></app-table>
+    </div>
+  </div>
 </div>

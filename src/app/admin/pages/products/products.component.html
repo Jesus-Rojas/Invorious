@@ -1,0 +1,42 @@
+<app-navigate>
+  <nz-breadcrumb>
+    <nz-breadcrumb-item class="cursor-pointer" [routerLink]="[ '/admin/products' ]">Products</nz-breadcrumb-item>
+  </nz-breadcrumb>
+</app-navigate>
+<div class="inner-content">
+  <nz-table #basicTable [nzData]="products" nzShowPagination nzShowSizeChanger>
+    <thead>
+      <tr>
+        <th nzWidth="60px"></th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Precio</th>
+        <th>Base</th>
+        <th>Amount</th>
+        <th>Action</th>
+      <!-- "relatedProducts": [2] -->
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let data of basicTable.data">
+        <tr>
+          <td [nzExpand]="expandSet.has(data.id)" (nzExpandChange)="onExpandChange({ id: data.id, checked: $event})"></td>
+          <td>{{ data.id }}</td>
+          <td>{{ data.name }}</td>
+          <td>{{ data.description }}</td>
+          <td>{{ data.price.value }}</td>
+          <td>{{ data.price.base }}</td>
+          <td>{{ data.price.amount }}</td>
+          <td>
+            <!-- <a [routerLink]="[ '/client/products', data.id ]">Ver</a> -->
+          </td>
+        </tr>
+        <tr [nzExpand]="expandSet.has(data.id)">
+          <h4>Related Products</h4>
+          <app-table [products]="data.products || []"></app-table>
+        </tr>
+      </ng-container>
+    </tbody>
+  </nz-table>
+</div>

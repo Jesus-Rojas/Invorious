@@ -12,7 +12,7 @@ import { TableComponent } from './components/table/table.component';
   declarations: [
     ProductsComponent,
     ProductComponent,
-    TableComponent
+    TableComponent,
   ],
   imports: [
     CommonModule,
