@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { Observable, Observer } from 'rxjs';
 import { Exchange } from 'src/app/shared/models/exchange.interface';
@@ -32,8 +33,8 @@ export class StoreComponent implements OnInit {
     private exchangeService: ExchangeRateService,
     private productService: ProductService,
     private message: NzMessageService,
-  ) 
-  { }
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
     this.productService.get().subscribe(products => {
@@ -57,7 +58,8 @@ export class StoreComponent implements OnInit {
     }
 
     this.productService.store(datos).subscribe(res => {
-      this.message.success(`Product created`);
+      this.message.success(`Product created`)
+      this.router.navigate(['/admin/products'])
     })
   }
 }

@@ -41,7 +41,7 @@ export class ShowComponent implements OnInit {
           this.message.error(`${status} ${statusText}`);
           this.router.navigate(['/admin'])
         }
-      });
+      })
   }
 
 }
