@@ -1,9 +1,15 @@
 
 <app-navigate>
-  <nz-breadcrumb>
-    <nz-breadcrumb-item class="cursor-pointer" [routerLink]="[ '/client/products' ]">Products</nz-breadcrumb-item>
-    <nz-breadcrumb-item v-if="product">{{ product?.name }}</nz-breadcrumb-item>
-  </nz-breadcrumb>
+  <ng-container>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <nz-breadcrumb>
+        <nz-breadcrumb-item class="cursor-pointer" [routerLink]="[ '/client/products' ]">Products</nz-breadcrumb-item>
+        <nz-breadcrumb-item v-if="product">{{ product?.name }}</nz-breadcrumb-item>
+      </nz-breadcrumb>
+
+      <app-currency></app-currency>
+    </div>
+  </ng-container>
 </app-navigate>
 
 <div class="inner-content">
@@ -22,7 +28,13 @@
       <h3>{{ product?.name }}</h3>
       <p>{{ product?.description }}</p>
       <p class="detail-price">Cant: {{ product?.price?.amount }}</p>
-      <p class="detail-price">Price: {{ product?.price?.value }} {{ product?.price?.base }}</p>
+      <p class="detail-price">
+        Price: {{ product?.price?.value }} {{ product?.price?.base }}
+        <app-currency-observer
+          *ngIf="product"
+          [product]="product"
+        ></app-currency-observer>
+      </p>
     </div>
   </div>
   <div nz-row *ngIf="related.length">

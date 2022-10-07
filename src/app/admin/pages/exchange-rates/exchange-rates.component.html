@@ -1,1 +1,26 @@
-<p>exchange-rates works!</p>
+<app-navigate>
+  <ng-container>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <nz-breadcrumb>
+        <nz-breadcrumb-item>Exchanges Rates</nz-breadcrumb-item>
+      </nz-breadcrumb>
+    </div>
+  </ng-container>
+</app-navigate>
+
+<div class="inner-content">
+  <nz-table #basicTable [nzData]="exchanges" nzShowPagination nzShowSizeChanger>
+    <thead>
+      <tr>
+        <th>Base</th>
+        <th>Rates</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.base }}</td>
+        <td>{{ data.rates | json }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

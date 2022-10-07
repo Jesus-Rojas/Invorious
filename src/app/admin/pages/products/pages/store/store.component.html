@@ -5,7 +5,12 @@
 </app-navigate>
 
 <div class="inner-content">
-  <form nz-form [formGroup]="form" (ngSubmit)="submitForm()">
+  <form 
+    nz-form 
+    [formGroup]="form" 
+    (ngSubmit)="submitForm()"
+    style="margin-left: auto; margin-right: auto; margin-top: 1rem;"
+  >
     
     <nz-form-item>
       <nz-form-label [nzSpan]="7" nzRequired>Name</nz-form-label>

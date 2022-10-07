@@ -1,5 +1,5 @@
 interface Price {
-  base: string;
+  base: 'USD'|'CNY'|'AUD'|string;
   value: number;
   amount: number;
 }

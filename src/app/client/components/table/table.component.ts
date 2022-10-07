@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Exchange } from 'src/app/shared/models/exchange.interface';
 import { Product } from 'src/app/shared/models/product.interface';
+import { ExchangeRateService } from 'src/app/shared/services/exchange-rate.service';
 
 @Component({
   selector: 'app-table',
@@ -11,7 +14,6 @@ export class TableComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

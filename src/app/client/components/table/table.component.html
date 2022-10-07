@@ -9,7 +9,9 @@
   <tbody>
     <tr *ngFor="let data of basicTable.data">
       <td>{{ data.name }}</td>
-      <td>{{ data.price.value + ' ' + data.price.base }}</td>
+      <td>
+        <app-currency-observer [product]="data" ></app-currency-observer>
+      </td>
       <td>
         <a [routerLink]="[ '/client/products', data.id ]">Ver</a>
       </td>

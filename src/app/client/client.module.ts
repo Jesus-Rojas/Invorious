@@ -6,6 +6,9 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ProductComponent } from './pages/product/product.component';
 import { NgZorroModule } from '../shared/ng-zorro.module';
 import { TableComponent } from './components/table/table.component';
+import { CurrencyComponent } from './components/currency/currency.component';
+import { FormsModule } from '@angular/forms';
+import { CurrencyObserverComponent } from './components/currency-observer/currency-observer.component';
 
 
 @NgModule({
@@ -13,11 +16,14 @@ import { TableComponent } from './components/table/table.component';
     ProductsComponent,
     ProductComponent,
     TableComponent,
+    CurrencyComponent,
+    CurrencyObserverComponent,
   ],
   imports: [
     CommonModule,
     ClientRoutingModule,
     NgZorroModule,
+    FormsModule
   ]
 })
 export class ClientModule { }

@@ -57,14 +57,6 @@ export class EditComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.productService.get().subscribe(products => {
-      this.products = products
-    })
-
-    this.exchangeService.get().subscribe(exchanges => {
-      this.exchanges = exchanges
-    })
-    
     this.route.params
       .pipe(
         map((param) => param['id']),
@@ -86,7 +78,17 @@ export class EditComponent implements OnInit {
           this.message.error(`${status} ${statusText}`);
           this.router.navigate(['/admin/products'])
         }
-      });
+      })
+
+    this.productService.get().subscribe(products => {
+      this.products = products.filter(product => product.id !== this.form.get('id')?.value)
+    })
+
+    this.exchangeService.get().subscribe(exchanges => {
+      this.exchanges = exchanges
+    })
+    
+    
   }
 
   submitForm(): void {
@@ -98,7 +100,7 @@ export class EditComponent implements OnInit {
       price: {
         value: this.form.get('price')?.value || 1,
         amount: this.form.get('amount')?.value || 1,
-        base: this.form.get('base')?.value || '',
+        base: this.form.get('base')?.value || 'USD',
       }
     }
 

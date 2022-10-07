@@ -1,0 +1,27 @@
+<ng-container 
+  *ngIf="currency && currency.base !== product.price.base; 
+  then thenTemplate; 
+  else elseTemplate"
+></ng-container>
+
+<ng-template #thenTemplate>
+  <ng-container 
+    *ngIf="
+      product.price.base == 'USD' || 
+      product.price.base == 'AUD' || 
+      product.price.base == 'CNY'
+    "
+  >
+  <span *ngIf="currency">
+    {{ 
+      ((product.price.value * (currency.rates[product.price.base] || 1)) | number)
+      + ' ' + 
+      currency.base
+    }}
+  </span>
+  </ng-container>
+</ng-template>
+
+<ng-template #elseTemplate>
+  {{ product.price.value + ' ' + product.price.base }}
+</ng-template>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Exchange } from 'src/app/shared/models/exchange.interface';
+import { ExchangeRateService } from 'src/app/shared/services/exchange-rate.service';
 
 @Component({
   selector: 'app-exchange-rates',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExchangeRatesComponent implements OnInit {
 
-  constructor() { }
+  exchanges: Exchange[] = []
+
+  constructor(
+    private exchangeService: ExchangeRateService,
+  ) { }
 
   ngOnInit(): void {
+    this.exchangeService.get().subscribe(res => {
+      this.exchanges = res
+    })
   }
 
 }

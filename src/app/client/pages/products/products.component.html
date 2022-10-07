@@ -1,7 +1,14 @@
 <app-navigate>
-  <nz-breadcrumb>
-    <nz-breadcrumb-item class="cursor-pointer" [routerLink]="[ '/client/products' ]">Products</nz-breadcrumb-item>
-  </nz-breadcrumb>
+  <ng-container>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <nz-breadcrumb>
+        <nz-breadcrumb-item [routerLink]="[ '/client/products' ]">Products</nz-breadcrumb-item>
+      </nz-breadcrumb>
+
+      <app-currency></app-currency>
+    </div>
+  </ng-container>
+  
 </app-navigate>
 <div class="inner-content">
   <app-table [products]="products"></app-table>

@@ -1,0 +1,9 @@
+<nz-select 
+  nzShowSearch 
+  nzAllowClear 
+  nzPlaceHolder="Select a exchange rate"
+  [(ngModel)]="currency"
+  (ngModelChange)="changeCurrency($event)"
+>
+  <nz-option *ngFor="let item of exchanges" [nzLabel]="item.base" [nzValue]="item"></nz-option>
+</nz-select>

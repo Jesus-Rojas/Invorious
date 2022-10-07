@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Exchange } from '../models/exchange.interface';
 
@@ -10,6 +10,8 @@ import { Exchange } from '../models/exchange.interface';
 export class ExchangeRateService {
 
   private api = environment.url
+  public exchangeSubject = new Subject<Exchange | null>();
+  public exchange = this.exchangeSubject.asObservable();
 
   constructor(
     private http: HttpClient

@@ -4,42 +4,34 @@
       "id": 1,
       "name": "Brown Shoes",
       "description": "A brown shirt made from fine cotton.",
-      "relatedProducts": [
-        2
-      ],
       "price": {
         "value": "1",
-        "amount": 50,
-        "base": "USD"
-      }
+        "base": "USD",
+        "amount": 50
+      },
+      "relatedProducts": [2]
     },
     {
       "id": 2,
       "name": "Green Pants",
       "description": "A super slick pair of green pants, hand crafted by artisan clothmakers in the Amazon.",
-      "relatedProducts": [
-        1,
-        4
-      ],
       "price": {
-        "value": 56,
-        "amount": 30,
-        "base": "USD"
-      }
+        "value": "1",
+        "base": "USD",
+        "amount": 30
+      },
+      "relatedProducts": [1, 4]
     },
     {
       "id": 3,
       "name": "Green Pants",
       "description": "A super slick pair of green pants, hand crafted by artisan clothmakers in the Amazon.",
-      "relatedProducts": [
-        1,
-        4
-      ],
       "price": {
-        "value": 10,
-        "amount": 25,
-        "base": "USD"
-      }
+        "value": "1",
+        "base": "USD",
+        "amount": 25
+      },
+      "relatedProducts": [1, 4]
     },
     {
       "id": 4,
@@ -50,10 +42,7 @@
         "base": "USD",
         "amount": 20
       },
-      "relatedProducts": [
-        3,
-        5
-      ]
+      "relatedProducts": [3, 5]
     },
     {
       "id": 5,
@@ -64,27 +53,7 @@
         "base": "CNY",
         "amount": 300
       },
-      "relatedProducts": [
-        4,
-        1
-      ]
-    },
-    {
-      "name": "asda",
-      "description": "adasdadasdda",
-      "relatedProducts": [
-        2,
-        3,
-        5,
-        1,
-        4
-      ],
-      "price": {
-        "value": 1312,
-        "amount": 123,
-        "base": "AUD"
-      },
-      "id": 6
+      "relatedProducts": [4, 1]
     }
   ],
   "exchange-rates": [
