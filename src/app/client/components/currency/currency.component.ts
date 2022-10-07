@@ -19,17 +19,18 @@ export class CurrencyComponent implements OnInit {
 
   ngOnInit(): void {
     this.exchangeService.get().subscribe(exchanges => {
-      const currency = JSON.parse(localStorage.getItem('exchange_rate') || '[]')
+      const currency = JSON.parse(localStorage.getItem('exchange_rate') || 'null')
       this.exchanges = exchanges
 
-      this.exchangeSubject.next(
-        exchanges.find(exchange => exchange.base === currency) || null
-      )
+      this.currency = exchanges.find(exchange => exchange.base === currency) || null
+      
+      this.exchangeSubject.next(this.currency)
     })
   }
 
   changeCurrency(exchange: Exchange | null) {
-    localStorage.setItem('exchange_rate', JSON.stringify(exchange))
+    const send = exchange && exchange.base ? exchange.base : null
+    localStorage.setItem('exchange_rate', JSON.stringify(send))
     this.exchangeSubject.next(exchange)
   }
 

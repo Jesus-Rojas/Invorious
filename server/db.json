@@ -1,28 +1,9 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Brown Shoes",
-      "description": "A brown shirt made from fine cotton.",
-      "price": {
-        "value": "1",
-        "base": "USD",
-        "amount": 50
-      },
-      "relatedProducts": [2]
-    },
-    {
-      "id": 2,
-      "name": "Green Pants",
-      "description": "A super slick pair of green pants, hand crafted by artisan clothmakers in the Amazon.",
-      "price": {
-        "value": "1",
-        "base": "USD",
-        "amount": 30
-      },
-      "relatedProducts": [1, 4]
-    },
-    {
+      "relatedProducts": [
+        4
+      ],
       "id": 3,
       "name": "Green Pants",
       "description": "A super slick pair of green pants, hand crafted by artisan clothmakers in the Amazon.",
@@ -30,21 +11,26 @@
         "value": "1",
         "base": "USD",
         "amount": 25
-      },
-      "relatedProducts": [1, 4]
+      }
     },
     {
       "id": 4,
       "name": "White Shirt",
       "description": "A pristine white shirt, sure to look great with any outfit.",
+      "relatedProducts": [
+        3,
+        5
+      ],
       "price": {
         "value": "1",
-        "base": "USD",
-        "amount": 20
-      },
-      "relatedProducts": [3, 5]
+        "amount": 20,
+        "base": "AUD"
+      }
     },
     {
+      "relatedProducts": [
+        4
+      ],
       "id": 5,
       "name": "Blue Shirt",
       "description": "You haven't seen a blue shirt like this before.",
@@ -52,8 +38,7 @@
         "value": "1",
         "base": "CNY",
         "amount": 300
-      },
-      "relatedProducts": [4, 1]
+      }
     }
   ],
   "exchange-rates": [

@@ -63,6 +63,8 @@ export class IndexComponent implements OnInit {
   }
 
   update({ products, id }: { products: Product[], id: number }) {
+    if (! products.length) return of([])
+
     const observer = products.map(({ relatedProducts, ...product }) => {
       delete product.products
 

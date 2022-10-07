@@ -29,7 +29,7 @@
       <p>{{ product?.description }}</p>
       <p class="detail-price">Cant: {{ product?.price?.amount }}</p>
       <p class="detail-price">
-        Price: {{ product?.price?.value }} {{ product?.price?.base }}
+        Price:
         <app-currency-observer
           *ngIf="product"
           [product]="product"

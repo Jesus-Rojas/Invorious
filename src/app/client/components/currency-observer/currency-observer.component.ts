@@ -13,7 +13,8 @@ export class CurrencyObserverComponent implements OnInit {
 
   @Input() product!: Product
 
-  exchange: Observable<Exchange | null> = this.exchangeService.exchange
+  exchange = this.exchangeService.exchange
+  exchangeSubject = this.exchangeService.exchangeSubject
   currency: Exchange | null = null
 
   constructor(
@@ -21,6 +22,13 @@ export class CurrencyObserverComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.exchangeService.get().subscribe(exchanges => {
+      const currency = JSON.parse(localStorage.getItem('exchange_rate') || 'null')
+      this.currency = exchanges.find(exchange => exchange.base === currency) || null
+      
+      this.exchangeSubject.next(this.currency)
+    })
+
     this.exchange.subscribe(res => {
       this.currency = res
     })
