@@ -10,7 +10,8 @@
 unknown@unknown$ npm i
 unknown@unknown$ npm i -g @angular/cli
 unknown@unknown$ cd ./server
-unknown@unknown$ npm i & npm start
+unknown@unknown$ npm i
+unknown@unknown$ npm start
 ```
 
 #### Terminal 2 (Directory root - project angular)
